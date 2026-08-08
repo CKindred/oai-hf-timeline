@@ -5,7 +5,7 @@
 echo "Running quality gate..." >&2
 CHANGED=$(git diff --name-only HEAD -- '*.tsx' '*.ts' '*.jsx' '*.js' 2>/dev/null)
 if [ -n "$CHANGED" ]; then
-  LINT_RESULT=$(echo "$CHANGED" | xargs bunx eslint --format=compact 2>&1)
+  LINT_RESULT=$(echo "$CHANGED" | xargs bunx eslint 2>&1)
   LINT_EXIT=$?
 else
   LINT_RESULT=""

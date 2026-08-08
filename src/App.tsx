@@ -3,7 +3,7 @@ import { timelineEvents, timelinePhases } from "@/data/timelineEvents";
 
 export const App = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-muted/40 text-foreground">
       <main className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-12 sm:px-6">
         <header className="flex flex-col gap-3">
           <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
