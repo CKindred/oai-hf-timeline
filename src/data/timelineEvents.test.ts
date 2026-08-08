@@ -18,9 +18,19 @@ describe("timelineEvents", () => {
     }
   });
 
-  test("every event has a valid https source URL", () => {
+  test("every event has at least one reported-by citation", () => {
     for (const event of timelineEvents) {
-      expect(event.sourceUrl.startsWith("https://")).toBe(true);
+      expect(event.reportedBy.length).toBeGreaterThan(0);
+    }
+  });
+
+  test("every citation with a URL uses https", () => {
+    for (const event of timelineEvents) {
+      for (const source of event.reportedBy) {
+        if (source.url !== undefined) {
+          expect(source.url.startsWith("https://")).toBe(true);
+        }
+      }
     }
   });
 

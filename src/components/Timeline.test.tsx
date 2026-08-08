@@ -17,9 +17,7 @@ const events: TimelineEvent[] = [
     phaseId: "initial-evaluation",
     title: "First Event",
     summary: "Summary of the first event.",
-    reportedBy: ["Test Source"],
-    sourceUrl: "https://example.com/1",
-    sourceLabel: "Example",
+    reportedBy: [{ name: "Test Source", url: "https://example.com/1" }],
   },
   {
     id: "event-2",
@@ -28,9 +26,7 @@ const events: TimelineEvent[] = [
     phaseId: "initial-evaluation",
     title: "Second Event",
     summary: "Summary of the second event.",
-    reportedBy: ["Test Source"],
-    sourceUrl: "https://example.com/2",
-    sourceLabel: "Example",
+    reportedBy: [{ name: "Test Source", url: "https://example.com/2" }],
   },
 ];
 

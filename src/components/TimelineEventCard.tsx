@@ -1,5 +1,5 @@
-import { ChevronDown, ExternalLink } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChevronDown } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import type { TimelineEvent } from "@/data/timelineEvents";
 
@@ -26,7 +26,7 @@ export const TimelineEventCard = ({ event, open, onOpenChange }: TimelineEventCa
               >
                 {event.dateLabel}
               </time>
-              <CardTitle className="text-base sm:text-lg">{event.title}</CardTitle>
+              <h3 className="text-base leading-none font-semibold sm:text-lg">{event.title}</h3>
             </CardHeader>
             <ChevronDown
               aria-hidden="true"
@@ -37,18 +37,26 @@ export const TimelineEventCard = ({ event, open, onOpenChange }: TimelineEventCa
             <CardContent className="flex flex-col gap-3 px-4 pb-4">
               <p className="text-sm leading-relaxed text-foreground">{event.summary}</p>
               <p className="text-xs text-muted-foreground">
-                Reported by {event.reportedBy.join(", ")}
+                Reported by{" "}
+                {event.reportedBy.map((source, index) => (
+                  <span key={source.name}>
+                    {index > 0 && ", "}
+                    {source.url ? (
+                      <a
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                      >
+                        {source.name}
+                        <span className="sr-only"> (opens in a new tab)</span>
+                      </a>
+                    ) : (
+                      source.name
+                    )}
+                  </span>
+                ))}
               </p>
-              <a
-                href={event.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-1 text-sm font-medium text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
-              >
-                View source
-                <ExternalLink aria-hidden="true" className="size-3.5" />
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
             </CardContent>
           </CollapsibleContent>
         </Card>
