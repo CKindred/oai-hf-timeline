@@ -72,4 +72,21 @@ describe("Timeline expand/collapse all", () => {
 
     expect(expandAllButton.disabled).toBe(true);
   });
+
+  test("closing a single card via its own trigger only affects that card", () => {
+    const { getByRole, getAllByRole } = render(<Timeline events={events} phases={phases} />);
+    const collapseAllButton = getByRole("button", { name: "Collapse all" }) as HTMLButtonElement;
+
+    fireEvent.click(getByRole("button", { name: "Expand all" }));
+    const [firstTrigger, secondTrigger] = getAllByRole("button", { name: /Event$/ });
+    if (!firstTrigger || !secondTrigger) {
+      throw new Error("Expected two card triggers");
+    }
+
+    fireEvent.click(firstTrigger);
+
+    expect(firstTrigger).toHaveAttribute("aria-expanded", "false");
+    expect(secondTrigger).toHaveAttribute("aria-expanded", "true");
+    expect(collapseAllButton.disabled).toBe(false);
+  });
 });
