@@ -12,7 +12,8 @@ export const App = () => {
             OpenAI &ndash; Hugging Face Incident Timeline
           </h1>
           <p className="text-sm text-muted-foreground">
-            A chronology of events from May&ndash;August 2026. Click the drop-downs to see more detail.
+            A chronology of events from May&ndash;August 2026. Click the
+            drop-downs to see more detail.
           </p>
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <span>Based on:</span>

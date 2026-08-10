@@ -29,7 +29,8 @@ The dev server runs at [http://localhost:3000](http://localhost:3000) with hot r
 | ---------------- | ----------------------------------------- |
 | `bun run dev`       | Start the local dev server with HMR       |
 | `bun run build`     | Produce a production build in `./dist`    |
-| `bun run lint`      | Run ESLint                                |
+| `bun run lint`      | Check linting and formatting with Biome   |
+| `bun run format`    | Apply Biome's formatting and safe lint fixes |
 | `bun run typecheck` | Run the TypeScript compiler (no emit)     |
 | `bun run test`      | Run the test suite                        |
 

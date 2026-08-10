@@ -12,7 +12,10 @@ describe("groupEventsByPhase", () => {
 
   test("every event appears in exactly one group", () => {
     const groups = groupEventsByPhase(timelineEvents, timelinePhases);
-    const totalGrouped = groups.reduce((sum, group) => sum + group.events.length, 0);
+    const totalGrouped = groups.reduce(
+      (sum, group) => sum + group.events.length,
+      0,
+    );
     expect(totalGrouped).toBe(timelineEvents.length);
   });
 
