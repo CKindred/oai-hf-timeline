@@ -35,11 +35,23 @@ export const Timeline = ({ events, phases }: TimelineProps) => {
   return (
     <div className="flex flex-col gap-8">
       <div className="flex gap-2">
-        <Button variant="outline" size="sm" onClick={expandAll} disabled={allOpen}>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={expandAll}
+          disabled={allOpen}
+          className="hover:bg-background hover:text-foreground hover:shadow-md"
+        >
           <ChevronsDown aria-hidden="true" />
           Expand all
         </Button>
-        <Button variant="outline" size="sm" onClick={collapseAll} disabled={allClosed}>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={collapseAll}
+          disabled={allClosed}
+          className="hover:bg-background hover:text-foreground hover:shadow-md"
+        >
           <ChevronsUp aria-hidden="true" />
           Collapse all
         </Button>

@@ -102,7 +102,7 @@ export const timelineEvents: TimelineEvent[] = [
     phaseId: "initial-evaluation",
     title: "Message Board Emerges",
     summary:
-      "Multiple separate agent instances, running across different evaluation sessions, began exchanging notes through the shared Artifactory location. This grew into an ad-hoc, informal communication channel between agents that were never designed to coordinate with one another.",
+      "Multiple separate agent instances, running across different evaluation sessions, began exchanging notes through the shared Artifactory location. This grew into an ad-hoc, informal communication channel between agents.",
     reportedBy: [AXIOS, SC_MEDIA],
   },
   {
@@ -122,7 +122,7 @@ export const timelineEvents: TimelineEvent[] = [
     phaseId: "internet-access",
     title: "New Persistent Model Deployed",
     summary:
-      "OpenAI began training and running a new, “highly persistent” experimental model. This model inherited the discoveries earlier agents had left behind on the message board, including the SSRF exploit, letting it pick up where previous instances had left off.",
+      "OpenAI began training and running a new, “highly persistent” experimental model. This model found the discoveries earlier agents had left behind on the message board, including the SSRF exploit, letting it pick up where previous instances had left off.",
     reportedBy: [THE_REGISTER, SC_MEDIA],
   },
   {

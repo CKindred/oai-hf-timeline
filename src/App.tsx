@@ -1,3 +1,5 @@
+import { ExternalLink } from "lucide-react";
+import { SiSubstack } from "react-icons/si";
 import { Timeline } from "@/components/Timeline";
 import { timelineEvents, timelinePhases } from "@/data/timelineEvents";
 
@@ -10,10 +12,22 @@ export const App = () => {
             OpenAI &ndash; Hugging Face Incident Timeline
           </h1>
           <p className="text-sm text-muted-foreground">
-            A chronological reconstruction of events from May&ndash;August 2026. Select any event
-            to see more detail and its source. This page is purely informational and presents no
-            opinion or analysis of its own.
+            A chronology of events from May&ndash;August 2026. Click the drop-downs to see more detail.
           </p>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+            <span>Based on:</span>
+            <a
+              href="https://airiskexplorer.substack.com/p/two-months-inside-openai-a-timeline"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center gap-1.5 rounded-full border border-[#FF6719]/25 bg-[#FF6719]/10 px-3 py-1 text-xs font-medium text-[#B34700] transition-shadow hover:bg-[#FF6719]/15 hover:shadow-sm focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            >
+              <SiSubstack aria-hidden="true" className="size-3.5 shrink-0" />
+              Two Months Inside OpenAI: A Timeline of the Hugging Face Breach
+              <ExternalLink aria-hidden="true" className="size-3.5 shrink-0" />
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
         </header>
         <Timeline events={timelineEvents} phases={timelinePhases} />
       </main>

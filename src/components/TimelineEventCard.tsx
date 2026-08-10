@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import type { TimelineEvent } from "@/data/timelineEvents";
@@ -18,7 +18,7 @@ export const TimelineEventCard = ({ event, open, onOpenChange }: TimelineEventCa
       />
       <Collapsible open={open} onOpenChange={onOpenChange}>
         <Card className="gap-0 overflow-hidden py-0 shadow-sm transition-shadow hover:shadow-md">
-          <CollapsibleTrigger className="group flex w-full items-start justify-between gap-4 p-4 text-left transition-colors hover:bg-accent/50 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
+          <CollapsibleTrigger className="group flex w-full items-start justify-between gap-4 p-4 text-left focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
             <CardHeader className="min-w-0 flex-1 gap-1.5 p-0">
               <time
                 dateTime={event.sortDate}
@@ -46,9 +46,10 @@ export const TimelineEventCard = ({ event, open, onOpenChange }: TimelineEventCa
                         href={source.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                        className="inline-flex items-center gap-0.5 font-medium text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
                       >
                         {source.name}
+                        <ExternalLink aria-hidden="true" className="size-3 shrink-0" />
                         <span className="sr-only"> (opens in a new tab)</span>
                       </a>
                     ) : (
