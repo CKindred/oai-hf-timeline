@@ -32,7 +32,15 @@ The dev server runs at [http://localhost:3000](http://localhost:3000) with hot r
 | `bun run lint`      | Check linting and formatting with Biome   |
 | `bun run format`    | Apply Biome's formatting and safe lint fixes |
 | `bun run typecheck` | Run the TypeScript compiler (no emit)     |
-| `bun run test`      | Run the test suite                        |
+| `bun run test`      | Run the unit test suite                   |
+| `bun run test:visual` | Run Playwright screenshot regression tests |
+
+Visual regression baselines are platform-specific (filenames are suffixed
+`-linux.png`) and must be generated in CI, not locally on macOS/Windows &mdash;
+running `test:visual` locally will fail on a missing/mismatched baseline even
+with no real regression. To update a baseline, push a commit, download the
+`playwright-screenshots` artifact from the failed `Visual Regression` run, and
+commit the updated PNG(s) from `tests/visual/timeline.spec.ts-snapshots/`.
 
 ## Project structure
 

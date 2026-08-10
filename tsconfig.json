@@ -23,5 +23,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "build.ts"]
+  "include": ["src", "build.ts", "scripts", "tests", "playwright.config.ts"]
 }
