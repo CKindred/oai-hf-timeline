@@ -27,10 +27,11 @@ The dev server runs at [http://localhost:3000](http://localhost:3000) with hot r
 
 | Command          | Description                              |
 | ---------------- | ----------------------------------------- |
-| `bun run dev`     | Start the local dev server with HMR       |
-| `bun run build`   | Produce a production build in `./dist`    |
-| `bun run lint`    | Run ESLint                                |
-| `bun run test`    | Run the test suite                        |
+| `bun run dev`       | Start the local dev server with HMR       |
+| `bun run build`     | Produce a production build in `./dist`    |
+| `bun run lint`      | Run ESLint                                |
+| `bun run typecheck` | Run the TypeScript compiler (no emit)     |
+| `bun run test`      | Run the test suite                        |
 
 ## Project structure
 
