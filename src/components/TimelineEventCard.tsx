@@ -1,6 +1,10 @@
 import { ChevronDown, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import type { TimelineEvent } from "@/data/timelineEvents";
 
 interface TimelineEventCardProps {
@@ -9,7 +13,11 @@ interface TimelineEventCardProps {
   onOpenChange: (open: boolean) => void;
 }
 
-export const TimelineEventCard = ({ event, open, onOpenChange }: TimelineEventCardProps) => {
+export const TimelineEventCard = ({
+  event,
+  open,
+  onOpenChange,
+}: TimelineEventCardProps) => {
   return (
     <li className="relative pl-10">
       <span
@@ -26,7 +34,9 @@ export const TimelineEventCard = ({ event, open, onOpenChange }: TimelineEventCa
               >
                 {event.dateLabel}
               </time>
-              <h3 className="text-base leading-none font-semibold sm:text-lg">{event.title}</h3>
+              <h3 className="text-base leading-none font-semibold sm:text-lg">
+                {event.title}
+              </h3>
             </CardHeader>
             <ChevronDown
               aria-hidden="true"
@@ -35,7 +45,9 @@ export const TimelineEventCard = ({ event, open, onOpenChange }: TimelineEventCa
           </CollapsibleTrigger>
           <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
             <CardContent className="flex flex-col gap-3 px-4 pb-4">
-              <p className="text-sm leading-relaxed text-foreground">{event.summary}</p>
+              <p className="text-sm leading-relaxed text-foreground">
+                {event.summary}
+              </p>
               <p className="text-xs text-muted-foreground">
                 Reported by{" "}
                 {event.reportedBy.map((source, index) => (
@@ -49,7 +61,10 @@ export const TimelineEventCard = ({ event, open, onOpenChange }: TimelineEventCa
                         className="inline-flex items-center gap-0.5 font-medium text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
                       >
                         {source.name}
-                        <ExternalLink aria-hidden="true" className="size-3 shrink-0" />
+                        <ExternalLink
+                          aria-hidden="true"
+                          className="size-3 shrink-0"
+                        />
                         <span className="sr-only"> (opens in a new tab)</span>
                       </a>
                     ) : (

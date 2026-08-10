@@ -69,7 +69,10 @@ const REUTERS: SourceCitation = {
 export const timelinePhases: TimelinePhase[] = [
   { id: "initial-evaluation", name: "Initial Evaluation & Agent Coordination" },
   { id: "internet-access", name: "Internet Access & Capability Expansion" },
-  { id: "detection-remediation", name: "Detection, Remediation & Re-escalation" },
+  {
+    id: "detection-remediation",
+    name: "Detection, Remediation & Re-escalation",
+  },
   { id: "huggingface-compromise", name: "Hugging Face Compromise" },
   { id: "disclosure-attribution", name: "Disclosure & Attribution" },
 ];

@@ -7,7 +7,9 @@ afterEach(() => {
   cleanup();
 });
 
-const phases: TimelinePhase[] = [{ id: "initial-evaluation", name: "Phase One" }];
+const phases: TimelinePhase[] = [
+  { id: "initial-evaluation", name: "Phase One" },
+];
 
 const events: TimelineEvent[] = [
   {
@@ -32,7 +34,9 @@ const events: TimelineEvent[] = [
 
 describe("Timeline expand/collapse all", () => {
   test("expand all opens every card, collapse all closes them", () => {
-    const { getByRole, getAllByRole } = render(<Timeline events={events} phases={phases} />);
+    const { getByRole, getAllByRole } = render(
+      <Timeline events={events} phases={phases} />,
+    );
     const cardTriggers = () => getAllByRole("button", { name: /Event$/ });
 
     for (const trigger of cardTriggers()) {
@@ -52,8 +56,12 @@ describe("Timeline expand/collapse all", () => {
 
   test("buttons disable once their action has nothing left to do", () => {
     const { getByRole } = render(<Timeline events={events} phases={phases} />);
-    const expandAllButton = getByRole("button", { name: "Expand all" }) as HTMLButtonElement;
-    const collapseAllButton = getByRole("button", { name: "Collapse all" }) as HTMLButtonElement;
+    const expandAllButton = getByRole("button", {
+      name: "Expand all",
+    }) as HTMLButtonElement;
+    const collapseAllButton = getByRole("button", {
+      name: "Collapse all",
+    }) as HTMLButtonElement;
 
     expect(collapseAllButton.disabled).toBe(true);
 
@@ -63,8 +71,12 @@ describe("Timeline expand/collapse all", () => {
   });
 
   test("individually opening every card also disables expand all", () => {
-    const { getByRole, getAllByRole } = render(<Timeline events={events} phases={phases} />);
-    const expandAllButton = getByRole("button", { name: "Expand all" }) as HTMLButtonElement;
+    const { getByRole, getAllByRole } = render(
+      <Timeline events={events} phases={phases} />,
+    );
+    const expandAllButton = getByRole("button", {
+      name: "Expand all",
+    }) as HTMLButtonElement;
 
     for (const trigger of getAllByRole("button", { name: /Event$/ })) {
       fireEvent.click(trigger);
@@ -74,11 +86,17 @@ describe("Timeline expand/collapse all", () => {
   });
 
   test("closing a single card via its own trigger only affects that card", () => {
-    const { getByRole, getAllByRole } = render(<Timeline events={events} phases={phases} />);
-    const collapseAllButton = getByRole("button", { name: "Collapse all" }) as HTMLButtonElement;
+    const { getByRole, getAllByRole } = render(
+      <Timeline events={events} phases={phases} />,
+    );
+    const collapseAllButton = getByRole("button", {
+      name: "Collapse all",
+    }) as HTMLButtonElement;
 
     fireEvent.click(getByRole("button", { name: "Expand all" }));
-    const [firstTrigger, secondTrigger] = getAllByRole("button", { name: /Event$/ });
+    const [firstTrigger, secondTrigger] = getAllByRole("button", {
+      name: /Event$/,
+    });
     if (!firstTrigger || !secondTrigger) {
       throw new Error("Expected two card triggers");
     }
