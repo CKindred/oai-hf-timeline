@@ -3,3 +3,4 @@ plugins = ["bun-plugin-tailwind"]
 
 [test]
 preload = ["./src/test-setup.ts"]
+root = "./src"
