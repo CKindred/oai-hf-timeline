@@ -6,6 +6,7 @@
     "dev": "bun --hot index.html",
     "build": "bun run build.ts",
     "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "test": "bun test"
   },
   "dependencies": {
