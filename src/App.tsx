@@ -16,7 +16,7 @@ export const App = () => {
             drop-downs to see more detail.
           </p>
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-            <span>Based on:</span>
+            <span>Based on (not my work):</span>
             <a
               href="https://airiskexplorer.substack.com/p/two-months-inside-openai-a-timeline"
               target="_blank"
@@ -32,6 +32,21 @@ export const App = () => {
         </header>
         <Timeline events={timelineEvents} phases={timelinePhases} />
       </main>
+      <footer className="mx-auto max-w-3xl px-4 pb-8 text-center text-sm text-muted-foreground sm:px-6">
+        Made by{" "}
+        <a
+          href="https://www.linkedin.com/in/callumkindred/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        >
+          Callum Kindred
+          <span className="sr-only">
+            {" "}
+            (opens LinkedIn profile in a new tab)
+          </span>
+        </a>
+      </footer>
     </div>
   );
 };
