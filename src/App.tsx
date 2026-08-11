@@ -33,7 +33,7 @@ export const App = () => {
         <Timeline events={timelineEvents} phases={timelinePhases} />
       </main>
       <footer className="mx-auto max-w-3xl px-4 pb-8 text-center text-sm text-muted-foreground sm:px-6">
-        Made by{" "}
+        Website by{" "}
         <a
           href="https://www.linkedin.com/in/callumkindred/"
           target="_blank"
