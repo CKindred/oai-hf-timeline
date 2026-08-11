@@ -30,7 +30,7 @@ export const TimelineEventCard = ({
             <CardHeader className="min-w-0 flex-1 gap-1.5 p-0">
               <time
                 dateTime={event.sortDate}
-                className="inline-flex w-fit items-center rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
+                className="inline-flex w-fit items-center rounded-full bg-secondary px-2 py-0.5 text-xs font-medium text-secondary-foreground"
               >
                 {event.dateLabel}
               </time>
